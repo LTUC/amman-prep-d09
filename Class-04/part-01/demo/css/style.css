@@ -48,6 +48,12 @@ a {
     top: 41px; */
 }
 
+main div h1 {
+    padding: 30px;
+    color: blanchedalmond;
+    font-size: 80px;
+}
+
 .container {
     background-image: url(https://wallpapercave.com/wp/wp4728101.jpg);
     height: 400px;
