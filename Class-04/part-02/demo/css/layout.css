@@ -2,33 +2,38 @@ h1 {
     border: 1px solid black;
 }
 
-p {
-    border: 1px solid red;
+span {
+    background-color: red;
 }
 
-span {
+p {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+a {
     border: 1px solid green;
-    background-color: green;
 }
 
 #container {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row-reverse;
-    align-items: flex-end;
     background-color: black;
     height: 100px;
+    border: 1px solid rgb(136, 20, 0);
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    align-items: center;
+    
+    
 }
 
-/* select all sections inside the container */
-
-#container section {
+#container section{
     border: 1px solid tomato;
-    height: 50px;
     width: 50px;
-    background-color: blanchedalmond;
+    height: 50px;
+    background: blanchedalmond;
 }
 
 .section3 {
-    align-self: center;
+    align-self: flex-end;
 }
+

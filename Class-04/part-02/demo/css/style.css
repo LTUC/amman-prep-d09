@@ -1,74 +1,71 @@
-/* variables */
 :root {
     --background: #55423d;
     --headline: #fffffe;
     --paragraph: #fff3ec;
     --button-bg: #ffc0ad;
     --button-text: #271c19;
+    --linkhover: #8f7973;
 }
 
-/* universal selector */
-/* * {
-    padding: 0px;
-    margin: 0px;
-} */
-
-/* body */
 body {
     background-color: var(--background);
 }
 
-/* Header */
 header {
     display: flex;
     justify-content: space-between;
 }
 
-.logo {
+img.logo {
     width: 140px;
     height: 100px;
-    filter: invert(100%) sepia(97%) saturate(710%) hue-rotate(300deg) brightness(118%) contrast(111%);
 }
 
 nav ul {
     display: flex;
     list-style-type: none;
-    gap: 9px;
+    /* justify-content: space-around; there is no effect because there is no extra space between the li */
+    gap: 20px;
 }
 
 a {
     text-decoration: none;
+    color: var(--paragraph);
 }
 
-a:link {
-    color: var(--paragraph)
+nav ul li {
+    padding: 5px;
+}
+
+li:hover {
+    background-color: var(--linkhover);
 }
 
 a:visited {
-    color: var(--paragraph)
+    color: var(--paragraph);
 }
 
 /* First row */
+
+
 .heroSection {
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: rgba(225, 225, 225, 0.047);
-    border-radius: 1rem;
-
 }
 
 h1 {
-    color: var(--headline);
+    color: var(--paragraph);
     font-size: 3rem;
 }
 
-.heroSection p {
+p {
     color: var(--paragraph);
     font-size: 1.5rem;
 }
 
-.heroSection button {
+.heroSection button{
     background-color: var(--button-bg);
     color: var(--button-text);
     font-size: 1rem;
@@ -78,34 +75,41 @@ h1 {
 }
 
 .heroSection button:hover {
-    background-color: #ffc0ad68;
+    background-color: #ffc0ad8f;
     cursor: pointer;
 }
 
-/* second row */
-.secondRow {
+/* second section */
+
+section.secondRow {
     display: flex;
     justify-content: space-around;
     text-align: center;
-    margin: 6% 0%;
+    margin: 6% 0;
 }
 
 .secondRow article {
-    background-color: rgba(225, 225, 225, 0.047);
-    ;
+    background-color: rgb(255,255,255, 0.047);
     width: 30%;
     height: 470px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 8px #00000078;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 60px 0;
 }
 
 article img {
-    width: 90px;
-    height: 90px;
-
+    width: 50%;
+    height: 55%;
 }
 
-article p,
-article ul {
+article p, article ul {
+    color: var(--paragraph);
+}
+
+article p, article ul {
     color: var(--paragraph);
     font-size: 1rem;
     padding: 7%;
@@ -120,11 +124,9 @@ article ul {
 }
 
 footer {
-    display: flex;
-    justify-content: center;
-    color: var(--paragraph)
+    text-align: center;
 }
 
 hr {
-    color: var(--paragraph)
+    color: var(--paragraph);
 }
