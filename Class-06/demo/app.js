@@ -110,7 +110,7 @@ function printHelllo() {
 printHelllo(); //call the function
 ////////////////////////////////////////
 
-let arr=[1,2,3,4];
+
 
 function sum(aaa) {
     let sum = 0;
@@ -121,11 +121,7 @@ function sum(aaa) {
     return sum;
 }
 
-let res = sum(arr);
-console.log(res);
-
-let arr2=[20,20,30,40];
-let res2 = sum(arr2);
-console.log(res2);
+let arr=[1,2,3,4];
+sum(arr);
 
 // Function Expression (Anonymous functions)
