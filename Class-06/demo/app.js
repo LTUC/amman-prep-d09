@@ -122,6 +122,30 @@ function sum(aaa) {
 }
 
 let arr=[1,2,3,4];
-sum(arr);
+let res = sum(arr); //call || invoke
 
 // Function Expression (Anonymous functions)
+
+const square = function(num) {
+    return num*num;
+}
+
+var x = square(4);
+var y = square(5)
+
+// Arrow functions (arrow function are always anonymous)
+
+function square2(x) { //function declaration 
+    return x*x;
+}
+
+// arrow function way 1
+const square2 = (x,y) => {
+    return x*x;
+}
+
+//arrow function way2
+const square2 = x => x*x;
+// of only one prameter, you can remove the `()`
+//if only one line of code, you can remove the `{}` and return
+
