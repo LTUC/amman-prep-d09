@@ -32,7 +32,8 @@ server.get('/recipes', recipesHandler)
 server.get('/newRecipes', newRecipesHandler)
 server.get('*', defaltHandler)
 
-server.use(errorHandler); // use middleware function
+server.use(errorHandler); //use middleware function
+
 
 // Functions Handlers
 function homeHandler(req, res) {
@@ -59,23 +60,6 @@ function recipesHandler(req, res) {
 }
 
 function newRecipesHandler(req, res) {
-    // //get recipes data from 3rd party API
-    // // 1. send a request to the recipes API
-    // const APIKey = process.env.APIKey;
-    // console.log(APIKey)
-    // const url = `https://api.spoonacular.com/recipes/random?apiKey=${APIKey}&number=3`;
-    // let axiosRes = await axios.get(url); //set timer
-    // console.log(axiosRes.data);
-    // console.log("Roaa");
-    // let mapResult = axiosRes.data.recipes.map((item)=>{
-    //     let singleRecipe = new Recipe(item.id,item.title,item.readyInMinutes,item.summary);
-    //     return singleRecipe;
-    // })
-    // res.send(mapResult);
-
-
-    //get recipes data from 3rd party API
-    // 1. send a request to the recipes API
     try {
 
         const APIKey = process.env.APIKey;
@@ -114,8 +98,6 @@ function errorHandler(erorr, req, res) {
     }
     res.status(500).send(err);
 }
-
-
 
 // http://localhost:3000 => (Ip = localhost) (port = 3000)
 server.listen(PORT, () => {
