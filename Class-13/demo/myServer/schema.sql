@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS favRecipes;
+
+CREATE TABLE IF NOT EXISTS favRecipes (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255),
+    min VARCHAR(255),
+    summary VARCHAR(10000)
+);
