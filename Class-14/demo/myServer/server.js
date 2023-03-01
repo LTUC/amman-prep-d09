@@ -34,6 +34,8 @@ server.get('/recipes', recipesHandler)
 server.get('/newRecipes', newRecipesHandler)
 server.get('/favRecipes',getFavRecipesHandler)
 server.post('/favRecipes',addFavRecipeHandler)
+server.delete('/favRecipes/:id',deleteFavRecipe)
+server.put('/favRecipes/:id',updateFavRecipe)
 server.get('*', defaltHandler)
 
 server.use(errorHandler); //use middleware function
@@ -124,6 +126,35 @@ function addFavRecipeHandler(req,res) {
         });
 }
 
+function deleteFavRecipe(req,res) {
+    //delete some data from the database
+    // console.log(req.params.id); //to get the path prameters
+    const id = req.params.id;
+    const sql = `DELETE FROM favRecipes WHERE id=${id}`;
+    client.query(sql)
+    .then((data)=>{
+        res.status(204).json({});
+    })
+    .catch((err)=>{
+        errorHandler(err,req,res);
+    })
+
+}
+
+function updateFavRecipe(req,res) {
+    const id = req.params.id;
+    console.log(id);
+    console.log(req.body);
+    const sql = `UPDATE favRecipes SET title=$1, min=$2, summary=$3 WHERE id=${id} RETURNING *`;
+    const values = [req.body.title,req.body.min,req.body.summary];
+    client.query(sql,values)
+    .then((data)=>{
+        res.status(200).send(data.rows);
+    })
+    .catch((err)=>{
+        errorHandler(err,req,res);
+    })
+}
 //middleware function
 function errorHandler(erorr, req, res) {
     const err = {
